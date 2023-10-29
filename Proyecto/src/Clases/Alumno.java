@@ -1,5 +1,4 @@
-package Clases;
-
+package Clases; 
 public class Alumno {
     
 }

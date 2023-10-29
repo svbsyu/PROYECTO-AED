@@ -1,0 +1,18 @@
+package Clases;
+
+public class Docente {
+    //atributos privados
+    private int CodigoDocente;
+    private String nombre, apellidos, categoria, telefonia, dni;
+    //Constructor
+    public Docente(int CodigoDocente, String nombre, String apellidos, String categoria, String telefonia, String dni) {
+        this.CodigoDocente = CodigoDocente;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.categoria = categoria;
+        this.telefonia = telefonia;
+        this.dni = dni;
+    }
+    //Getters and Setters
+    
+}

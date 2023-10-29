@@ -1,0 +1,18 @@
+package Arrreglos;
+
+public class ArregloDocente {
+    //Atributos privados
+    private int codigoDocente;
+    private String nombre, apellidos, categoria, telefono, dni;
+    //Constructor
+    public Docente(int codigoDocente, String nombre, String apellidos, String categoria, String telefono, String dni){
+        this.codigoDocente = codigoDocente;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.categoria = categoria;
+        this.telefono = telefono;
+        this.dni = dni;
+    }
+    
+}
+        

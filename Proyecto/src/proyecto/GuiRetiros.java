@@ -31,7 +31,7 @@ public class GuiRetiros extends JFrame {
 	private JButton btnNewButton;
 	private JButton btnRetirar;
 	private JButton btnSalir;
-
+ 
 	/**
 	 * Launch the application.
 	 */
