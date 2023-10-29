@@ -12,6 +12,8 @@ import javax.swing.JMenu;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GuiPrincipal extends JFrame {
 
@@ -26,6 +28,8 @@ public class GuiPrincipal extends JFrame {
 	private JMenuItem mntmDocentes;
 	private JMenuItem mntmAlumnos;
 	private JMenuItem mntmCursos;
+	private JMenuItem mntmRetiros;
+	private JMenuItem mntmNewMenuItem_1;
 
 	/**
 	 * Launch the application.
@@ -77,6 +81,11 @@ public class GuiPrincipal extends JFrame {
 		
 		// Sub menu de Docentes
 		mntmDocentes = new JMenuItem("Docentes");
+		mntmDocentes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmDocentes(e);
+			}
+		});
 		ImageIcon Docente = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Docente.png"));
 	    Image subImg1 = Docente.getImage().getScaledInstance(ancho, altura, Image.SCALE_SMOOTH);
 	    ImageIcon subImgAjus1 = new ImageIcon(subImg1);
@@ -85,6 +94,11 @@ public class GuiPrincipal extends JFrame {
 		
 		// Sub menu de Alumnos
 		mntmAlumnos = new JMenuItem("Alumnos");
+		mntmAlumnos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmAlumnos(e);
+			}
+		});
 		ImageIcon Alumno = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Alumno.png"));
 	    Image subImg2 = Alumno.getImage().getScaledInstance(ancho, altura, Image.SCALE_SMOOTH);
 	    ImageIcon subImgAjus2 = new ImageIcon(subImg2);
@@ -93,6 +107,11 @@ public class GuiPrincipal extends JFrame {
 		
 		// Sub menu de Cursos
 		mntmCursos = new JMenuItem("Cursos");
+		mntmCursos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmCursos(e);
+			}
+		});
 		ImageIcon Curso = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Cursos.png"));
 	    Image subImg3 = Curso.getImage().getScaledInstance(40, 50, Image.SCALE_SMOOTH);
 	    ImageIcon subImgAjus3 = new ImageIcon(subImg3);
@@ -115,6 +134,14 @@ public class GuiPrincipal extends JFrame {
 		mnRetiros.setIcon(imagenAjustada3);
 		menuBar.add(mnRetiros);
 		
+		mntmRetiros = new JMenuItem("Retiros");
+		mntmRetiros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmNewMenuItem(e);
+			}
+		});
+		mnRetiros.add(mntmRetiros);
+		
 		// Menu Asignacion
 		mnAsignacion = new JMenu("Asignación docente");
 		ImageIcon Asignacion = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Asignacion.png"));
@@ -122,6 +149,14 @@ public class GuiPrincipal extends JFrame {
 		ImageIcon imagenAjustada4 = new ImageIcon(imagen4);
 		mnAsignacion.setIcon(imagenAjustada4);
 		menuBar.add(mnAsignacion);
+		
+		mntmNewMenuItem_1 = new JMenuItem("Asignar Docente");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmNewMenuItem_1(e);
+			}
+		});
+		mnAsignacion.add(mntmNewMenuItem_1);
 		
 		// Menu Reporte
 		mnReportes = new JMenu("Reportes");
@@ -138,5 +173,35 @@ public class GuiPrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+	}
+	protected void actionPerformedMntmDocentes(ActionEvent e) {
+		ManteDocentes d;
+		d = new ManteDocentes();
+		d.setLocationRelativeTo(this);
+		d.setVisible(true);
+	}
+	protected void actionPerformedMntmAlumnos(ActionEvent e) {
+		ManteAlumnos d;
+		d = new ManteAlumnos();
+		d.setLocationRelativeTo(this);
+		d.setVisible(true);
+	}
+	protected void actionPerformedMntmCursos(ActionEvent e) {
+		ManteCursos d;
+		d = new ManteCursos();
+		d.setLocationRelativeTo(this);
+		d.setVisible(true);
+	}
+	protected void actionPerformedMntmNewMenuItem(ActionEvent e) {
+		GuiRetiros d;
+		d = new GuiRetiros();
+		d.setLocationRelativeTo(this);
+		d.setVisible(true);
+	}
+	protected void actionPerformedMntmNewMenuItem_1(ActionEvent e) {
+		GuiAsignacionDocente d;
+		d = new GuiAsignacionDocente();
+		d.setLocationRelativeTo(this);
+		d.setVisible(true);
 	}
 }

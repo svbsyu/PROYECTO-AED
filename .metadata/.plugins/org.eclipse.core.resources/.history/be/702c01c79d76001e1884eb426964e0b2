@@ -1,0 +1,15 @@
+package Clases;
+import java.util.Random;
+public class Curso {
+    //Atributos Privados
+    private int codigoCurso, codigoDocente, nombre, horas;
+    //Constructor
+    public Curso(int CodigoCurso, int CodigoDocente, int nombre, int horas) {
+        this.codigoCurso = CodigoCurso;
+        this.codigoDocente = CodigoDocente;
+        this.nombre = nombre;
+        this.horas = horas;
+    }
+    //Getters and Setters
+    
+}

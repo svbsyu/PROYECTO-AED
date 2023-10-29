@@ -1,133 +1,138 @@
 package proyecto;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.UIManager;
-import java.awt.Color;
+import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 
-public class GuiRetiros extends JFrame {
+public class GuiRetiros extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
 	private JPanel panel;
-	private JLabel lblNewLabel;
 	private JPanel panel_1;
-	private JLabel lblCdAlumno;
 	private JLabel lblCdCurso;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JComboBox comboBox;
+	private JComboBox<Object> comboBox;
+	private JPanel panel_2;
 	private JButton btnNewButton;
-	private JButton btnRetirar;
-	private JButton btnSalir;
- 
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
+	private JScrollPane scrollPane;
+	private JTable table;
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Throwable e) {
+			GuiRetiros dialog = new GuiRetiros();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GuiRetiros frame = new GuiRetiros();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the dialog.
 	 */
 	public GuiRetiros() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 613, 591);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		setResizable(false);
+		setTitle("Retiros");
+		setBounds(100, 100, 555, 500);
+		getContentPane().setLayout(null);
 		
 		panel = new JPanel();
-		panel.setForeground(new Color(0, 0, 0));
-		panel.setToolTipText("");
-		panel.setBorder(new TitledBorder(null, "Datos del matriculado", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(51, 153, 255)));
-		panel.setBounds(30, 11, 395, 136);
-		contentPane.add(panel);
+		panel.setBounds(0, 0, 539, 461);
+		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		lblNewLabel = new JLabel("Cód. Matricula");
-		lblNewLabel.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		lblNewLabel.setBounds(10, 21, 143, 23);
-		panel.add(lblNewLabel);
-		
-		lblCdAlumno = new JLabel("Cód. Alumno");
-		lblCdAlumno.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		lblCdAlumno.setBounds(10, 55, 143, 23);
-		panel.add(lblCdAlumno);
+		panel_1 = new JPanel();
+		panel_1.setBounds(10, 11, 353, 126);
+		panel_1.setLayout(null);
+		panel_1.setBorder(new TitledBorder(null, "Datos del Matriculado", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel.add(panel_1);
 		
 		lblCdCurso = new JLabel("Cód. Curso");
-		lblCdCurso.setFont(new Font("Yu Gothic UI", Font.PLAIN, 15));
-		lblCdCurso.setBounds(10, 89, 143, 23);
-		panel.add(lblCdCurso);
+		lblCdCurso.setFont(new Font("Microsoft PhagsPa", Font.PLAIN, 15));
+		lblCdCurso.setBounds(10, 87, 122, 20);
+		panel_1.add(lblCdCurso);
+		
+		lblNewLabel = new JLabel("Cód. Alumno");
+		lblNewLabel.setFont(new Font("Microsoft PhagsPa", Font.PLAIN, 15));
+		lblNewLabel.setBounds(10, 23, 122, 20);
+		panel_1.add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("Cód. Matricula");
+		lblNewLabel_1.setFont(new Font("Microsoft PhagsPa", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(10, 56, 122, 20);
+		panel_1.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setBounds(151, 25, 86, 20);
-		panel.add(textField);
 		textField.setColumns(10);
+		textField.setBounds(141, 25, 86, 20);
+		panel_1.add(textField);
 		
 		textField_1 = new JTextField();
-		textField_1.setEditable(false);
 		textField_1.setColumns(10);
-		textField_1.setBounds(151, 59, 86, 20);
-		panel.add(textField_1);
+		textField_1.setBounds(141, 58, 86, 20);
+		panel_1.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setEditable(false);
 		textField_2.setColumns(10);
-		textField_2.setBounds(151, 93, 86, 20);
-		panel.add(textField_2);
+		textField_2.setBounds(141, 89, 86, 20);
+		panel_1.add(textField_2);
 		
-		comboBox = new JComboBox();
-		comboBox.setBounds(274, 24, 99, 22);
-		panel.add(comboBox);
+		comboBox = new JComboBox<Object>();
+		comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {"comojodes"}));
+		comboBox.setBounds(250, 24, 86, 22);
+		panel_1.add(comboBox);
 		
-		panel_1 = new JPanel();
-		panel_1.setLayout(null);
-		panel_1.setToolTipText("");
-		panel_1.setForeground(Color.BLACK);
-		panel_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Accion a realizar", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(51, 153, 255)));
-		panel_1.setBounds(435, 11, 144, 136);
-		contentPane.add(panel_1);
+		panel_2 = new JPanel();
+		panel_2.setBounds(373, 11, 157, 126);
+		panel_2.setLayout(null);
+		panel_2.setBorder(new TitledBorder(null, "Acciones", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel.add(panel_2);
 		
 		btnNewButton = new JButton("Buscar");
-		btnNewButton.setBounds(10, 22, 124, 23);
-		panel_1.add(btnNewButton);
+		btnNewButton.setBounds(36, 19, 89, 23);
+		panel_2.add(btnNewButton);
 		
-		btnRetirar = new JButton("Retirar");
-		btnRetirar.setBounds(10, 55, 124, 23);
-		panel_1.add(btnRetirar);
+		btnNewButton_1 = new JButton("Retirar");
+		btnNewButton_1.setBounds(36, 53, 89, 23);
+		panel_2.add(btnNewButton_1);
 		
-		btnSalir = new JButton("Salir");
-		btnSalir.setBounds(10, 89, 124, 23);
-		panel_1.add(btnSalir);
+		btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton_2(e);
+			}
+		});
+		btnNewButton_2.setBounds(36, 87, 89, 23);
+		panel_2.add(btnNewButton_2);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 141, 520, 309);
+		panel.add(scrollPane);
+		
+		table = new JTable();
+		table.setFillsViewportHeight(true);
+		scrollPane.setViewportView(table);
+	}
+	protected void actionPerformedBtnNewButton_2(ActionEvent e) {
+		dispose();
 	}
 }

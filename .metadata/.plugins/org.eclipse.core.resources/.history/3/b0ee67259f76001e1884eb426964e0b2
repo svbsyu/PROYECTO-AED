@@ -1,0 +1,13 @@
+package Clases;
+import java.util.Random;
+public class Matricula {
+    //Atributos Privados
+    private int codigoMatricula, codigoAlumno, codigoCurso;
+    //Constructor
+    public Matricula(int CodigoMatricula, int CodigoAlumno, int CodigoCurso) {
+        this.codigoMatricula = CodigoMatricula;
+        this.codigoAlumno = CodigoAlumno;
+        this.codigoCurso = CodigoCurso;
+    }
+    //Getters and Setters
+}

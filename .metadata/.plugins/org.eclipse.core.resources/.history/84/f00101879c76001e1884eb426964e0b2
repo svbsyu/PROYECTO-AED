@@ -1,0 +1,17 @@
+package Clases; 
+import java.util.Random;
+public class Alumno {
+    //Atributos privados
+    private int CodigoAlumno;
+    private String nombre, apellido, telefono, dni;
+    //Constructor
+    public Alumno(int CodigoAlumno, String nombre, String apellido, String telefono, String dni) {
+        this.CodigoAlumno = CodigoAlumno;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.dni = dni;
+    }
+    //Getters and Setters
+    
+}

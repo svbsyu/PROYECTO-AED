@@ -1,0 +1,197 @@
+package proyecto;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.TitledBorder;
+import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class AsignaciónDocente extends JDialog {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JLabel lblCodigoDocente;
+	private JLabel lblNombreDocente;
+	private JLabel lblCodigoCurso;
+	private JLabel lblNombreCurso;
+	private JLabel lblNewLabel_1;
+	private JSeparator separator;
+	private JTextField txtCodigoDocente;
+	private JTextField txtCodigoCurso;
+	private JButton btnBuscar;
+	private JButton btnAsignar;
+	private JButton btnEliminar;
+	private JButton btnCancelar;
+	private JButton btnNuevo;
+	private JButton btnListar;
+	private JPanel panel_1;
+	private JButton btnBuscar1;
+	private JComboBox<String> comboBox;
+	private JComboBox<String> comboBox_1;
+	private JPanel panel;
+	private JScrollPane scrollPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AsignaciónDocente frame = new AsignaciónDocente();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public AsignaciónDocente() {
+		setTitle("Asignación de Docente");
+		setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+		setBounds(100, 100, 598, 458);
+		contentPane = new JPanel();
+		contentPane.setToolTipText("Rafael Robinho Capristano \r\nAnderson Gioel Cutipa \r\nJuan Sebastián Romero \r\nGian Carlo Rosales\r\nWilly Pool Calderon\r\n");
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lblCodigoDocente = new JLabel("Código Docente");
+		lblCodigoDocente.setBounds(31, 88, 114, 14);
+		contentPane.add(lblCodigoDocente);
+		
+		lblNombreDocente = new JLabel("Nombre del Docente");
+		lblNombreDocente.setBounds(31, 121, 121, 14);
+		contentPane.add(lblNombreDocente);
+		
+		lblCodigoCurso = new JLabel("Código Curso");
+		lblCodigoCurso.setBounds(31, 146, 107, 22);
+		contentPane.add(lblCodigoCurso);
+		
+		lblNombreCurso = new JLabel("Nombre del Curso");
+		lblNombreCurso.setBounds(31, 179, 114, 14);
+		contentPane.add(lblNombreCurso);
+		
+		lblNewLabel_1 = new JLabel("Asignación de Docente");
+		lblNewLabel_1.setFont(new Font("Stencil", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(155, 16, 297, 31);
+		contentPane.add(lblNewLabel_1);
+		
+		separator = new JSeparator();
+		separator.setBounds(88, 45, 385, 2);
+		contentPane.add(separator);
+		
+		txtCodigoDocente = new JTextField();
+		txtCodigoDocente.setBounds(153, 85, 173, 20);
+		contentPane.add(txtCodigoDocente);
+		txtCodigoDocente.setColumns(10);
+		
+		txtCodigoCurso = new JTextField();
+		txtCodigoCurso.setBounds(153, 148, 76, 20);
+		contentPane.add(txtCodigoCurso);
+		txtCodigoCurso.setColumns(10);
+		
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnBuscar(e);
+			}
+		});
+		btnBuscar.setBounds(360, 99, 92, 23);
+		contentPane.add(btnBuscar);
+		
+		btnAsignar = new JButton("Asignar");
+		btnAsignar.setBounds(467, 99, 92, 23);
+		contentPane.add(btnAsignar);
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnEliminar(e);
+			}
+		});
+		btnEliminar.setBounds(360, 133, 92, 23);
+		contentPane.add(btnEliminar);
+		
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(467, 133, 92, 23);
+		contentPane.add(btnCancelar);
+		
+		btnNuevo = new JButton("Nuevo");
+		btnNuevo.setBounds(467, 167, 92, 23);
+		contentPane.add(btnNuevo);
+		
+		btnListar = new JButton("Listar");
+		btnListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton_5(e);
+			}
+		});
+		btnListar.setBounds(360, 167, 92, 23);
+		contentPane.add(btnListar);
+		
+		panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Acciones", TitledBorder.CENTER, TitledBorder.TOP, null, Color.RED));
+		panel_1.setBounds(346, 58, 226, 156);
+		contentPane.add(panel_1);
+		
+		btnBuscar1 = new JButton("Buscar");
+		btnBuscar1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton(e);
+			}
+		});
+		btnBuscar1.setBounds(234, 146, 92, 23);
+		contentPane.add(btnBuscar1);
+		
+		comboBox = new JComboBox<String>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Comunicación", "Matemática", "Ciencias Sociales", "Arte", "Religión "}));
+		comboBox.setToolTipText("");
+		comboBox.setBounds(153, 175, 173, 22);
+		contentPane.add(comboBox);
+		
+		comboBox_1 = new JComboBox<String>();
+		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Rafael Robinho Capristano ", "Anderson Gioel Cutipa ", "Juan Sebastián Romero ", "Gian Carlo Rosales", "Willy Pool Calderon"}));
+		comboBox_1.setBounds(153, 117, 173, 22);
+		contentPane.add(comboBox_1);
+		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Informaci\u00F3n ", TitledBorder.CENTER, TitledBorder.TOP, null, Color.RED));
+		panel.setBounds(20, 58, 316, 156);
+		contentPane.add(panel);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(20, 223, 552, 185);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+	}
+	protected void actionPerformedBtnNewButton_5(ActionEvent e) {
+	}
+	protected void actionPerformedBtnNewButton(ActionEvent e) {
+	}
+	protected void actionPerformedBtnBuscar(ActionEvent e) {
+	}
+	protected void actionPerformedBtnEliminar(ActionEvent e) {
+	}
+}
