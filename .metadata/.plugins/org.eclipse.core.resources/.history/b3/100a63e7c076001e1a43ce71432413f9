@@ -29,8 +29,7 @@ public class GuiPrincipal extends JFrame {
 	private JMenuItem mntmAlumnos;
 	private JMenuItem mntmCursos;
 	private JMenuItem mntmRetiros;
-	private JMenuItem mntmAsignarDocente;
-	private JMenuItem mntmMatriculas;
+	private JMenuItem mntmNewMenuItem_1;
 
 	/**
 	 * Launch the application.
@@ -127,14 +126,6 @@ public class GuiPrincipal extends JFrame {
 		mnMatriculas.setIcon(imagenAjustada2);
 		menuBar.add(mnMatriculas);
 		
-		mntmMatriculas = new JMenuItem("Matriculas");
-		mntmMatriculas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformedMntmMatriculas(e);
-			}
-		});
-		mnMatriculas.add(mntmMatriculas);
-		
 		// Menu Retiros
 		mnRetiros = new JMenu("Retiros");
 		ImageIcon Retiros = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Retiros.png"));
@@ -159,13 +150,13 @@ public class GuiPrincipal extends JFrame {
 		mnAsignacion.setIcon(imagenAjustada4);
 		menuBar.add(mnAsignacion);
 		
-		mntmAsignarDocente = new JMenuItem("Asignar Docente");
-		mntmAsignarDocente.addActionListener(new ActionListener() {
+		mntmNewMenuItem_1 = new JMenuItem("Asignar Docente");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedMntmNewMenuItem_1(e);
 			}
 		});
-		mnAsignacion.add(mntmAsignarDocente);
+		mnAsignacion.add(mntmNewMenuItem_1);
 		
 		// Menu Reporte
 		mnReportes = new JMenu("Reportes");
@@ -210,12 +201,6 @@ public class GuiPrincipal extends JFrame {
 	protected void actionPerformedMntmNewMenuItem_1(ActionEvent e) {
 		GuiAsignacionDocente d;
 		d = new GuiAsignacionDocente();
-		d.setLocationRelativeTo(this);
-		d.setVisible(true);
-	}
-	protected void actionPerformedMntmMatriculas(ActionEvent e) {
-		GuiMatriculas d;
-		d = new GuiMatriculas();
 		d.setLocationRelativeTo(this);
 		d.setVisible(true);
 	}
