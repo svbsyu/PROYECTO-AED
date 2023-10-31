@@ -2,10 +2,12 @@ package proyecto;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -18,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.UIManager;
 
 public class ManteCursos extends JDialog {
 
@@ -53,6 +56,11 @@ public class ManteCursos extends JDialog {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -73,6 +81,11 @@ public class ManteCursos extends JDialog {
 		setBounds(100, 100, 696, 535);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		// Logo principal
+		ImageIcon logo = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Logo.png"));
+		Image imagen = logo.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+		setIconImage(new ImageIcon(imagen).getImage());
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

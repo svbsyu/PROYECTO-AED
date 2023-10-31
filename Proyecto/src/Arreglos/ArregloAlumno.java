@@ -6,7 +6,7 @@ public class ArregloAlumno {
     private ArrayList <Alumno> alu;
     //Constructor
     public ArregloAlumno(){
-        alu = new ArrayList<>();
+        alu = new ArrayList<Alumno>();
     }
     public void adicionar(Alumno x){
         alu.add(x);

@@ -2,10 +2,12 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.awt.Image"/>
-    <fullyQualifiedTypeName name="proyecto.GuiPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="proyecto.AsignaciónDocente"/>
     <fullyQualifiedTypeName name="proyecto.AsignacionDocente"/>
     <fullyQualifiedTypeName name="proyecto.GuiAsignacionDocente"/>
+    <fullyQualifiedTypeName name="proyecto.GuiReportes"/>
+    <fullyQualifiedTypeName name="proyecto.GuiPrincipal"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
 </qualifiedTypeNameHistroy>

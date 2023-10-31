@@ -58,6 +58,7 @@ public class GuiPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public GuiPrincipal() {
+		setTitle("Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 701, 474);
 		
@@ -171,6 +172,7 @@ public class GuiPrincipal extends JFrame {
 		// Menu Reporte
 		mnReportes = new JMenu("Reportes");
 		ImageIcon Reporte = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Reporte.png"));
+		//ImageIcon Reporte = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Reporte.png"));
 		Image imagen5 = Reporte.getImage().getScaledInstance(ancho, altura, Image.SCALE_SMOOTH);
 		ImageIcon imagenAjustada5 = new ImageIcon(imagen5);
 		mnReportes.setIcon(imagenAjustada5);

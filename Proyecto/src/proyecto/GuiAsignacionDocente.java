@@ -1,12 +1,16 @@
 package proyecto;
 
 import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -58,12 +62,18 @@ public class GuiAsignacionDocente extends JDialog {
 	 * Create the dialog.
 	 */
 	public GuiAsignacionDocente() {
+		setModal(true);
 		setTitle("Asignacion Docente");
 		setBounds(100, 100, 595, 456);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+		
+		// Logo principal
+		ImageIcon logo = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Logo.png"));
+		Image imagen = logo.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+		setIconImage(new ImageIcon(imagen).getImage());
 		
 		lblCodigoDocente = new JLabel("Código Docente");
 		lblCodigoDocente.setBounds(21, 83, 114, 14);

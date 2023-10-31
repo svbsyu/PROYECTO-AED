@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
@@ -13,6 +15,8 @@ import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 public class GuiRetiros extends JDialog {
 
@@ -38,6 +42,11 @@ public class GuiRetiros extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		try {
 			GuiRetiros dialog = new GuiRetiros();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
@@ -50,10 +59,16 @@ public class GuiRetiros extends JDialog {
 	 * Create the dialog.
 	 */
 	public GuiRetiros() {
+		setModal(true);
 		setResizable(false);
 		setTitle("Retiros");
 		setBounds(100, 100, 555, 500);
 		getContentPane().setLayout(null);
+		
+		// Logo principal
+		ImageIcon logo = new ImageIcon(GuiPrincipal.class.getResource("/Imagenes/Logo.png"));
+		Image imagen = logo.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+		setIconImage(new ImageIcon(imagen).getImage());
 		
 		panel = new JPanel();
 		panel.setBounds(0, 0, 539, 461);

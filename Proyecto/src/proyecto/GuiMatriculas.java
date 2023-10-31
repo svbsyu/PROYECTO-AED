@@ -18,6 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 
 public class GuiMatriculas extends JDialog {
@@ -45,6 +46,11 @@ public class GuiMatriculas extends JDialog {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		try {
 			GuiMatriculas dialog = new GuiMatriculas();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -104,7 +110,7 @@ public class GuiMatriculas extends JDialog {
 		panel_1.add(Nume);
 		
 		lblNewLabel_1 = new JLabel("Código de alumno\r\n");
-		lblNewLabel_1.setBounds(10, 59, 102, 14);
+		lblNewLabel_1.setBounds(10, 59, 119, 14);
 		panel_1.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("Código de curso");
