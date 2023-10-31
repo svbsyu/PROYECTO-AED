@@ -16,8 +16,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.DefaultComboBoxModel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 
 public class GuiMatriculas extends JDialog {
@@ -58,7 +56,6 @@ public class GuiMatriculas extends JDialog {
 	 * Create the dialog.
 	 */
 	public GuiMatriculas() {
-		setTitle("Matriculas");
 		setModal(true);
 		setBounds(100, 100, 706, 477);
 		
@@ -83,11 +80,6 @@ public class GuiMatriculas extends JDialog {
 		panel.add(btnBuscar);
 		
 		btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformedBtnCancelar(e);
-			}
-		});
 		btnCancelar.setBounds(48, 77, 89, 23);
 		panel.add(btnCancelar);
 		
@@ -153,8 +145,5 @@ public class GuiMatriculas extends JDialog {
 		 tblTabla.setModel(modelo);
 		 modelo.setRowCount(0);
 		
-	}
-	protected void actionPerformedBtnCancelar(ActionEvent e) {
-		dispose();
 	}
 }

@@ -13,8 +13,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class GuiAsignacionDocente extends JDialog {
 
@@ -113,11 +111,6 @@ public class GuiAsignacionDocente extends JDialog {
 		contentPanel.add(btnEliminar);
 		
 		btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformedBtnCancelar(e);
-			}
-		});
 		btnCancelar.setBounds(457, 128, 92, 23);
 		contentPanel.add(btnCancelar);
 		
@@ -155,8 +148,5 @@ public class GuiAsignacionDocente extends JDialog {
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 218, 552, 185);
 		contentPanel.add(scrollPane);
-	}
-	protected void actionPerformedBtnCancelar(ActionEvent e) {
-		dispose();
 	}
 }

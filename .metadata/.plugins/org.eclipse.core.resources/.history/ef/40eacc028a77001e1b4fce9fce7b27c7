@@ -31,7 +31,6 @@ public class GuiPrincipal extends JFrame {
 	private JMenuItem mntmRetiros;
 	private JMenuItem mntmAsignarDocente;
 	private JMenuItem mntmMatriculas;
-	private JMenuItem mntmReporte;
 
 	/**
 	 * Launch the application.
@@ -176,14 +175,6 @@ public class GuiPrincipal extends JFrame {
 		mnReportes.setIcon(imagenAjustada5);
 		menuBar.add(mnReportes);
 		
-		mntmReporte = new JMenuItem("Reportes");
-		mntmReporte.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformedMntmReporte(e);
-			}
-		});
-		mnReportes.add(mntmReporte);
-		
 		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 255));
@@ -225,12 +216,6 @@ public class GuiPrincipal extends JFrame {
 	protected void actionPerformedMntmMatriculas(ActionEvent e) {
 		GuiMatriculas d;
 		d = new GuiMatriculas();
-		d.setLocationRelativeTo(this);
-		d.setVisible(true);
-	}
-	protected void actionPerformedMntmReporte(ActionEvent e) {
-		GuiReportes d;
-		d = new GuiReportes();
 		d.setLocationRelativeTo(this);
 		d.setVisible(true);
 	}
