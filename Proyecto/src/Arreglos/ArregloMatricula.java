@@ -2,10 +2,11 @@ package Arreglos;
 import Clases.Matricula;
 import java.util.ArrayList;
 public class ArregloMatricula {
-    //Atributos Privados
     private ArrayList <Matricula> mat;
     public ArregloMatricula(){
         mat = new ArrayList<>();
+        adicionar(new Matricula(4001, 2001, 3001));
+        adicionar(new Matricula(4002, 2002, 3002));
     }
     public void adicionar(Matricula x){
         mat.add(x);
@@ -21,5 +22,26 @@ public class ArregloMatricula {
         if(obtener(i).getCodigoMatricula() == codigoMatricula)
             return obtener(i);
         return null;
+    }
+    public Matricula buscar1(int codigoAlumno){
+        for(int i = 0; i < tamanio(); i++)
+        if(obtener(i).getCodigoAlumno() == codigoAlumno)
+            return obtener(i);
+        return null;
+    }
+    public Matricula buscar2(int codigoCurso){
+        for(int i = 0; i < tamanio(); i++)
+        if(obtener(i).getCodigoCurso() == codigoCurso)
+            return obtener(i);
+        return null;
+    }
+    public void eliminar(Matricula x) {
+    	mat.remove(x);
+    }
+    public int codigoCorrelativo() {
+    	if(tamanio() == 0)
+    		return 4001;
+    	else
+    		return obtener(tamanio() -1).getCodigoMatricula() + 1;
     }
 }

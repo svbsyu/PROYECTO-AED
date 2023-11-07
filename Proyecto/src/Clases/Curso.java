@@ -1,33 +1,17 @@
 package Clases;
-import java.util.Random;
-public class Curso {
-    //Atributos Privados
-    private int codigoCurso, codigoDocente, nombre, horas;
-    //Constructor
-    public Curso(int CodigoCurso, int CodigoDocente, int nombre, int horas) {
-        this.codigoCurso = CodigoCurso;
-        this.codigoDocente = CodigoDocente;
-        this.nombre = nombre;
-        this.horas = horas;
-    }
-    //Getters and Setters
+public class Curso extends Docente{
+	public int codigoCurso;
+	private int horas;
+	public Curso(int codigoCurso, int codigoDocente, String nombre, int horas) {
+		super(codigoDocente, nombre, nombre, nombre, nombre, horas);
+		this.codigoCurso=codigoCurso;
+		this.horas=horas;
+	}
 	public int getCodigoCurso() {
 		return codigoCurso;
 	}
 	public void setCodigoCurso(int codigoCurso) {
 		this.codigoCurso = codigoCurso;
-	}
-	public int getCodigoDocente() {
-		return codigoDocente;
-	}
-	public void setCodigoDocente(int codigoDocente) {
-		this.codigoDocente = codigoDocente;
-	}
-	public int getNombre() {
-		return nombre;
-	}
-	public void setNombre(int nombre) {
-		this.nombre = nombre;
 	}
 	public int getHoras() {
 		return horas;
@@ -35,9 +19,5 @@ public class Curso {
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
-    public static int numeroaleatorio(){
-        int min = 3001, max = 4000;
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
+	
 }
